@@ -11,7 +11,7 @@
 
 --------------------------------------------------------------------------------------------
 
-## Burda admin ve kullanıcılar tutulmakta ilk kaydolan kullanıcı admin olarak atanıyor ve admin paneline, kayıt olduğu kullanıcı adı ve şifreyle ulaşabiliyor
+## Burda admin ve kullanıcılar indexedDb' de tutulmakta ilk kaydolan kullanıcı admin olarak atanıyor ve admin paneline, kayıt olduğu kullanıcı adı ve şifreyle ulaşabiliyor
 ![image](https://user-images.githubusercontent.com/93881127/217737076-5f6c53ac-8251-4e16-a6a2-8bf90fbca16e.png)
 
 ---------------------------------------------------------------------------------------------
@@ -28,6 +28,9 @@
 
 ### modal görünümü
 ![image](https://user-images.githubusercontent.com/93881127/217738931-96e1b10f-0763-4016-9410-eddc5099b613.png)
+
+## Todolarımız da indedex db ye usernameler ile kaydoluyorlar böyleliklle hangi kullanıcıyla giriş yaparsanız o kişinin todolarıyla karsılasıyorsunuz
+![image](https://user-images.githubusercontent.com/93881127/217739898-be878d85-c4bd-488b-9379-85b020919ca8.png)
 
 ### Todoların eklendikten sonra tamamlanma yüzdesine göre border-leftleri ve kendileri renk değiştiriyor
 ![image](https://user-images.githubusercontent.com/93881127/217738481-846f96c4-0ab8-4e35-adf0-8a686f3409e4.png)
