@@ -1,7 +1,7 @@
 # React ve indexedDb ile login ve admin ekranı olan to-Do-List
 
 
-## Projeyi ilk açtığımızda karşımıza giriş ekranı çıkıyor kimse kayıtlı olmadıgından sağ alt taraftaki linke tıklayarak kaydolma ekranına geçiş yapıyor ve gerekli bilgilerle kaydoluyoruz
+## Projeyi ilk açtığımızda karşımıza giriş ekranı çıkıyor kimse kayıtlı olmadıgından sağ alt taraftaki linke tıklayarak kaydolma ekranına geçiş yapıyor ve gerekli bilgilerle kayıt oluyoruz
 
 ### Giriş ekranı
 ![image](https://user-images.githubusercontent.com/93881127/217737739-5529e930-a890-4880-9e3c-42311b239478.png)
