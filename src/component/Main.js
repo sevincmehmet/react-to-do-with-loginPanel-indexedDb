@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
 import AdminPanel from "./AdminPanel";
-import LogIn from "./LogIn";
+// import LogIn from "./LogIn";
+import Logins from "./Logins"
+import SignUp from "./SignUp"
+import { Routes, Route, Link, NavLink } from "react-router-dom" 
+import UserControl from "./UserControl"
 
 import UserPanel from "./UserPanel";
+import { Form } from "react-router-dom";
 
 const Main = ({
   // youAdmin,
@@ -37,9 +42,9 @@ const Main = ({
   useEffect(() => {
 
   }, [loginUser])
-  // useEffect(() => {
+  useEffect(() => {
 
-  // }, [youAdmin, youUser])
+  }, [youAdmin, youUser])
 
   const loginControl = loginUserName + loginPassword;
 
@@ -64,32 +69,81 @@ const Main = ({
 
   return (
     <>
-    
-    {!(youUser && youAdmin)} {
-      
       <>
-      <LogIn
-        youUser={youUser}
-        youAdmin={youAdmin}
-        firstName={firstName}
-        setFirstName={setFirstName}
-        lastName={lastName}
-        setLastName={setLastName}
-        email={email}
-        setEmail={setEmail}
-        password={password}
-        setPassword={setPassword}
-        loginUserName={loginUserName}
-        loginPassword={loginPassword}
-        setLoginUserName={setLoginUserName}
-        setLoginPassword={setLoginPassword}
-        allUsersData={allUsersData}
-        getAllData={getAllData}
-        login={login}
-      />
-      </>
-    }
+      {/* {!(youAdmin && youUser) &&  } */}
+      <Routes>
+          <Route path="/" element={
+            <Logins
+            youUser={youUser}
+            youAdmin={youAdmin}
+            firstName={firstName}
+            setFirstName={setFirstName}
+            lastName={lastName}
+            setLastName={setLastName}
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
+            loginUserName={loginUserName}
+            loginPassword={loginPassword}
+            setLoginUserName={setLoginUserName}
+            setLoginPassword={setLoginPassword}
+            allUsersData={allUsersData}
+            getAllData={getAllData}
+            login={login}
+          />
+          }>
+          </Route>
+          <Route path="/SignUp" element={
+            <SignUp
+            youUser={youUser}
+            youAdmin={youAdmin}
+            firstName={firstName}
+            setFirstName={setFirstName}
+            lastName={lastName}
+            setLastName={setLastName}
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
+            loginUserName={loginUserName}
+            loginPassword={loginPassword}
+            setLoginUserName={setLoginUserName}
+            setLoginPassword={setLoginPassword}
+            allUsersData={allUsersData}
+            getAllData={getAllData}
+            login={login}
+          />
+          }>
+          </Route>
+          <Route path="/UserControl" element={
+            <UserControl
+            getAllData={getAllData}
+            allUsersData={allUsersData}
+            firstName={firstName}
+            setFirstName={setFirstName}
+            lastName={lastName}
+            setLastName={setLastName}
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
+            allToDoData={allToDoData}
+            loginUser={loginUser}
+            youAdmin={youAdmin}
+            setYouAdmin={setYouAdmin}
+            youUser={youUser}
+            setYouUser={setYouUser}
+            setLoginUser={setLoginUser}
+            setLoginPassword={setLoginPassword}
+            />
+          }>
 
+          </Route>
+        </Routes>
+      
+      </>
+{/* 
       {(youAdmin && (!youUser)) && (
         <>
           <AdminPanel
@@ -116,7 +170,7 @@ const Main = ({
             setYouUser={setYouUser}
           />
         </>
-      )}
+      )} */}
     </>
   );
 };

@@ -27,6 +27,9 @@ const createCollectionsIndexedDB = () => {
       db.createObjectStore("userData", {
         keyPath: "id",
       }); 
+      db.createObjectStore("todoData", {
+        keyPath: "id",
+      }); 
     }
   };
   request.onsuccess = () => {
@@ -70,20 +73,6 @@ const App = () => {
         // const loginControl = loginUserName + loginPassword;
 
         setAllUsersData(query.srcElement.result);
-        // if (!youAdmin) { // !Kullanıcı Kontrolü
-        //   if (loginControl?.trim() == allUsersData[0]?.loginData.trim()) {
-        //     alert("admin girişi başarılı");
-        //     setYouAdmin(!youAdmin);
-        //   } else {
-        //     allUsersData.forEach((data) => {
-        //       if (data?.loginData.trim() == loginControl?.trim()) {
-        //         setYouUser(!youUser);
-        //         setLoginUser(data);
-        //         alert("Kullanıcı girişi başarılı");
-        //       }
-        //     });
-        //   }
-        // }
       };
       toDos.onsuccess = (query) => {
         setAllToDoData(query.srcElement.result);
@@ -110,22 +99,10 @@ const App = () => {
     <>
 
       <Main
-        // email={email} // ? MAİN.js' e taşındılar
-        // setEmail={setEmail}
-        // password={password} 
-        // setPassword={setPassword}
-        getAllData={getAllData}
-        // youAdmin={youAdmin}
-        // loginUserName={loginUserName} // ? MAİN.js' e tasındırlar 
-        // setLoginUserName={setLoginUserName}
-        // loginPassword={loginPassword}
-        // setLoginPassword={setLoginPassword}
+        getAllData={getAllData} 
         allUsersData={allUsersData}
         allToDoData={allToDoData}
-        // youUser={youUser}
-        // loginUser={loginUser}
-        // setYouAdmin={setYouAdmin}
-        // setYouUser={setYouUser}
+
       />
     </>
   );

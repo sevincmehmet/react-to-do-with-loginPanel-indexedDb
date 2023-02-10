@@ -3,7 +3,8 @@ import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import Row from "react-bootstrap/Row";
+import { Routes, Route, Link, NavLink } from "react-router-dom" 
+
 
 
 const idb =
@@ -15,7 +16,7 @@ window.shimIndexDb;
 
 
 
-const LogIn = ({
+ const Logins = ({
   firstName,
   lastName,
   email,
@@ -33,16 +34,13 @@ const LogIn = ({
   login
 }) => {
   const [validated, setValidated] = useState(false);
-  const [registered, setRegistared] = useState(true);
   const [arrControl, setArrControl] = useState([])
   const [controlMail, setControlMail] = useState("")
 
   useEffect(() => {
     
   }, [controlMail])
-  useEffect(() => {
 
-  }, [registered]);
  
 
   const control = async() => {
@@ -61,10 +59,10 @@ const LogIn = ({
   }
 
 
-  const handleSubmit = (event) => {
+   const handleSubmit = (event) => {
     const form = event.currentTarget;
 
-    if (form.checkValidity() === false) {
+    if (form.checkValidity() === true) {
       event.preventDefault();
       event.stopPropagation();
     }
@@ -73,7 +71,7 @@ const LogIn = ({
 
 
 
-    /*kullanıcı kaydoldurugunda çalısıyor*/
+  // ! SİGN-UP EKRANINA KOY
     const addData = () => {
       const dbPromise = idb.open("my-db", 2);
   
@@ -119,65 +117,9 @@ const LogIn = ({
       >
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <div className="mb-3">
-            {!registered && (
-              <>
-                <Form.Group as={Col} controlId="validationCustomFirstName">
-                  <Form.Label>First Name</Form.Label>
-                  <Form.Control
-                    required
-                    type="text"
-                    name="firstName"
-                    placeholder="First name"
-                    onChange={(e) => setFirstName(e.target.value)}
-                  />
-                  <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group as={Col} controlId="validationCustomLastName">
-                  <Form.Label>Last name</Form.Label>
-                  <Form.Control
-                    required
-                    type="text"
-                    name="lastName"
-                    placeholder="Last Name"
-                    onChange={(e) => setLastName(e.target.value)}
-                  />
-                  <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                </Form.Group>
-
-                <Form.Group as={Col} controlId="validationCustomUsername">
-                  <Form.Label>Username</Form.Label>
-                  <InputGroup hasValidation>
-                    <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
-                    <Form.Control
-                      type="text"
-                      name="email"
-                      placeholder="Username"
-                      aria-describedby="inputGroupPrepend"
-                      required
-                      onChange={(e) => {setEmail(e.target.value);
-                      setControlMail(e.target.value)}}
-                    />
-                    <Form.Control.Feedback type="invalid">
-                      Please choose a username.
-                    </Form.Control.Feedback>
-                  </InputGroup>
-                </Form.Group>
-                <Form.Group as={Col} controlId="validationCustomPassword">
-                  <Form.Label>Password</Form.Label>
-                  <Form.Control
-                    required
-                    type="password"
-                    placeholder="Password"
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                </Form.Group>
-              </>
-            )}
-
+            
             <Form.Group
               as={Col}
-              className={!registered && "d-none"}
               controlId="validationCustomLoginUsername"
             >
               <Form.Label>Username</Form.Label>
@@ -196,7 +138,6 @@ const LogIn = ({
               </InputGroup>
             </Form.Group>
             <Form.Group
-              className={!registered && "d-none"}
               as={Col}
               controlId="validationCustomLoginPassword"
             >
@@ -211,22 +152,21 @@ const LogIn = ({
             </Form.Group>
           </div>
           <div className="position-relative">
-            <Button onClick={() => {registered ? login() :control()}} className="mb-3" type="submit">
-              {registered ? "Login" : "Sign Up"}
-            </Button>
+            <Link to="/UserControl" onClick={() => {login()}} className=" login-link mb-3" type="submit">
+              Login
+            </Link>
 
-            <a
+            <Link to="/SignUp"
               className="position-absolute top-0 end-0"
               href="#"
               onClick={() => {
-                setRegistared(!registered);
                 setFirstName("");
                 setLastName("");
                 setEmail("");
               }}
             >
-              {registered ? "Sign Up" : "LogIn"}
-            </a>
+              Sign Up
+              </Link>
           </div>
           {/* <Form.Group>
             <Form.Check
@@ -242,4 +182,4 @@ const LogIn = ({
   );
 };
 
-export default LogIn;
+export default Logins;

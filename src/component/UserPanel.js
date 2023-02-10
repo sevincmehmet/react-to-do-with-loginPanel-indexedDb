@@ -6,6 +6,8 @@ import Card from "react-bootstrap/Card";
 import Accordion from "react-bootstrap/Accordion";
 import ImagePaths from "../assets/images/ImagePaths";
 import { useState, useEffect } from "react";
+import { Routes, Route, Link, NavLink } from "react-router-dom" 
+
 
 const idb =
   window.indexedDB ||
@@ -20,6 +22,8 @@ function UserPanel({
   loginUser,
   setYouUser,
   setYouAdmin,
+  setLoginUser,
+  setLoginPassword
 }) {
   const [title, setTitle] = useState("");
   const [article, setArticle] = useState("");
@@ -217,19 +221,21 @@ function UserPanel({
                   <Card.Text className="p-2 article-profile">
                     email : {loginUser.email}
                   </Card.Text>
-                  <button
-                    id="exit-svg"
+                  <Link
+                    id="exit"
                     className="btn btn-danger"
-                    type=" button"
+                    to="/"
                     onClick={() => {
                       alert('Oturum sonlandırıldı')
                       setYouAdmin(false);
                       setYouUser(false);
+                      setLoginUser("")
+                      setLoginPassword("")
                     }}
                   >
                     exit
                     {/* <img src={ImagePaths.exit} width="30px"></img> */}
-                  </button>
+                  </Link>
                 </Card.Body>
               </Card>
             </Col>
