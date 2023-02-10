@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# React ve indexedDb ile login ve admin ekranı olan to-Do-List
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Projeyi ilk açtığımızda karşımıza giriş ekranı çıkıyor kimse kayıtlı olmadıgından sağ alt taraftaki linke tıklayarak kaydolma ekranına geçiş yapıyor ve gerekli bilgilerle kayıt oluyoruz
 
-In the project directory, you can run:
+### Giriş ekranı
+![image](https://user-images.githubusercontent.com/93881127/217737739-5529e930-a890-4880-9e3c-42311b239478.png)
 
-### `npm start`
+### Kaydolma ekranı
+![image](https://user-images.githubusercontent.com/93881127/217737526-f8dad9b6-96f1-40d5-8ca0-fbfcd1499762.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+--------------------------------------------------------------------------------------------
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Burda admin ve kullanıcılar indexedDb' de tutulmakta ilk kaydolan kullanıcı admin olarak atanıyor ve admin paneline, kayıt olduğu kullanıcı adı ve şifreyle ulaşabiliyor
+![image](https://user-images.githubusercontent.com/93881127/217737076-5f6c53ac-8251-4e16-a6a2-8bf90fbca16e.png)
 
-### `npm test`
+---------------------------------------------------------------------------------------------
+## Admin girişi yaparsanız: Kullanıcı; ekleyebileceğiniz, silebileceğiniz ve kullanıcı bilgilerini güncelleyebileceğiniz bir ekranla karsılasıyorsunuz
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![image](https://user-images.githubusercontent.com/93881127/217738134-582e2096-540c-41ab-9662-4c287eef5b65.png)
+---------------------------------------------------------------------------------------------
+## Kullanıcı girişi yaparsanız To-Do larınızı ekleyip düzenleyebileceğiniz bir ekranla karsılasırsınız 
+### Giriş yaptıgınız kullanıcı bilgileri sol tarafta profilinizde gözükür 
+  -exit butonu cıkıs yapmanızı sağlar
+  -add new task butonu da yeni to-do lar ekleyebileceğiniz bir modalla karşılaşırsınız 
+### User Paneli
+![image](https://user-images.githubusercontent.com/93881127/217738872-4b44d7ae-4ce2-463c-975d-a862de1d76ca.png)
 
-### `npm run build`
+### modal görünümü
+![image](https://user-images.githubusercontent.com/93881127/217738931-96e1b10f-0763-4016-9410-eddc5099b613.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Todolarımız da indedex db ye usernameler ile kaydoluyorlar böyleliklle hangi kullanıcıyla giriş yaparsanız o kişinin todolarıyla karsılasıyorsunuz
+![image](https://user-images.githubusercontent.com/93881127/217739898-be878d85-c4bd-488b-9379-85b020919ca8.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Todoların eklendikten sonra tamamlanma yüzdesine göre border-leftleri ve kendileri renk değiştiriyor
+![image](https://user-images.githubusercontent.com/93881127/217738481-846f96c4-0ab8-4e35-adf0-8a686f3409e4.png)
+### Herhangi bir todonun üzerine basarsanız: Düzenleme, silme butonlarını ve todonuzun ayrıntılarını görürsünüz
+![image](https://user-images.githubusercontent.com/93881127/217739585-a98724a4-27ef-4a30-9d27-9172a1f4c264.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
